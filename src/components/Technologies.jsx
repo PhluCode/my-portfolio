@@ -32,6 +32,7 @@ const GROUPS = [
       { name: "TailwindCSS", Icon: SiTailwindcss, color: "text-sky-400" },
       { name: "Node.js", Icon: SiNodedotjs, color: "text-green-500" },
       { name: "Express.js", Icon: SiExpress, color: "text-neutral-700" },
+      { name: "Prisma", Icon: SiPrisma, color: "text-indigo-600" }
     ],
   },
   {
@@ -40,14 +41,13 @@ const GROUPS = [
       { name: "PostgreSQL", Icon: SiPostgresql, color: "text-sky-600" },
       { name: "MySQL", Icon: SiMysql, color: "text-blue-500" },
       { name: "MongoDB", Icon: SiMongodb, color: "text-green-500" },
-      { name: "Prisma", Icon: SiPrisma, color: "text-indigo-600" },
     ],
   },
 ];
 
 const Technologies = () => {
   return (
-    <div className="pb-24">
+    <div id="technologies" className="scroll-mt-24 pb-24">
       <motion.h2
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -50 }}

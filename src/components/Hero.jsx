@@ -1,5 +1,6 @@
-import { ABOUT_TEXT } from "../constants";
+import { ABOUT_TEXT, EDUCATION } from "../constants";
 import profile from '../assets/myProfile.png';
+import { FaGraduationCap } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const container = (delay) => ({
@@ -13,7 +14,7 @@ const container = (delay) => ({
 
 const Hero = () => {
   return (
-    <div className='w-full pb-4 lg:mb-20'>
+    <div id='about' className='w-full scroll-mt-24 pb-4 lg:mb-20'>
         <div className='flex flex-wrap items-center'>
             <div className='w-full lg:w-1/2'>
                 <div className='flex flex-col items-center lg:items-start'>
@@ -38,6 +39,25 @@ const Hero = () => {
                         className="my-2 max-w-xl py-6 font-light text-[#7A98BF]">
                         {ABOUT_TEXT}
                     </motion.p>
+                    <motion.div
+                        variants={container(1.3)}
+                        initial='hidden'
+                        animate='visible'
+                        className="w-full max-w-xl">
+                        <div className="mb-4 inline-flex items-center gap-2  border-b border-[#7A98BF]/30 bg-white py-2 text-[#2D4473]">
+                            <FaGraduationCap className="text-2xl" />
+                            <span className="text-lg font-bold uppercase tracking-wide">Education</span>
+                        </div>
+                        <div className="flex flex-col gap-4 text-left">
+                            {EDUCATION.map((edu) => (
+                                <div key={edu.school}>
+                                    <h3 className="font-semibold text-[#2D4473]">{edu.school}</h3>
+                                    <p className="text-[#7A98BF]">{edu.program}</p>
+                                    <p className="text-sm text-[#7A98BF]">{edu.detail}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </motion.div>
                 </div>
             </div>
             <div className="w-full lg:w-1/2 lg:p-8">

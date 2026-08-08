@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const Projects = () => {
   return (
-    <div className="pb-4">
+    <div id="projects" className="scroll-mt-24 pb-4">
         <motion.h2 
         whileInView={{opacity: 1, x:0}}
         initial={{opacity: 0, x: -100}}
@@ -27,7 +27,7 @@ const Projects = () => {
                 initial={{opacity: 0, x: 100}}
                 transition={{duration: 0.5}}
                 className="w-full lg:w-2/3 lg:pl-8">
-                    <a href={`https://phlucode.github.io/${project.linktag}`} target="_blank" rel="noopener noreferrer">
+                    <a href={`${project.linktag}`} target="_blank" rel="noopener noreferrer">
                         <h6 className="mb-2 font-semibold text-[#7A98BF] underline">{project.title}</h6>
                     </a>
                     <p className="mb-4 text-[#2D4473]">{project.description}</p>
