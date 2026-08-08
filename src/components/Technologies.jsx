@@ -1,98 +1,85 @@
-import { FaPython } from "react-icons/fa";
-import { BiLogoPostgresql } from "react-icons/bi";
-import { RiNextjsFill } from "react-icons/ri";
-import { SiMongodb } from "react-icons/si";
-import { FaBootstrap } from "react-icons/fa";
-import { RiTailwindCssFill } from "react-icons/ri";
-import { FaReact } from "react-icons/fa";
-import { FaNode } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { FaPython, FaJava } from "react-icons/fa";
+import {
+  SiJavascript,
+  SiTypescript,
+  SiNextdotjs,
+  SiReact,
+  SiTailwindcss,
+  SiNodedotjs,
+  SiExpress,
+  SiPostgresql,
+  SiMysql,
+  SiMongodb,
+  SiPrisma,
+} from "react-icons/si";
 
-const iconVariants = (duration) => ({
-    initial: {y: -10},
-    animate: {
-        y: [10, -10],
-        transition: {
-            duration: duration,
-            ease: "linear",
-            repeat: Infinity,
-            repeatType: "reverse"
-        }
-    }
-})
-
+const GROUPS = [
+  {
+    title: "Languages",
+    items: [
+      { name: "JavaScript", Icon: SiJavascript, color: "text-yellow-400" },
+      { name: "TypeScript", Icon: SiTypescript, color: "text-blue-500" },
+      { name: "Python", Icon: FaPython, color: "text-yellow-300" },
+      { name: "Java", Icon: FaJava, color: "text-red-500" },
+    ],
+  },
+  {
+    title: "Technologies",
+    items: [
+      { name: "Next.js", Icon: SiNextdotjs, color: "text-neutral-800" },
+      { name: "React.js", Icon: SiReact, color: "text-cyan-400" },
+      { name: "TailwindCSS", Icon: SiTailwindcss, color: "text-sky-400" },
+      { name: "Node.js", Icon: SiNodedotjs, color: "text-green-500" },
+      { name: "Express.js", Icon: SiExpress, color: "text-neutral-700" },
+    ],
+  },
+  {
+    title: "Databases",
+    items: [
+      { name: "PostgreSQL", Icon: SiPostgresql, color: "text-sky-600" },
+      { name: "MySQL", Icon: SiMysql, color: "text-blue-500" },
+      { name: "MongoDB", Icon: SiMongodb, color: "text-green-500" },
+      { name: "Prisma", Icon: SiPrisma, color: "text-indigo-600" },
+    ],
+  },
+];
 
 const Technologies = () => {
   return (
     <div className="pb-24">
-        <motion.h2 
-        whileInView={{opacity: 1, x:0}}
-        initial={{opacity: 0, x: -100}}
-        transition={{duration: 1.5}}
-        className="my-20 text-center text-4xl text-[#2D4473]">Technologies</motion.h2>
-        <motion.div 
-        whileInView={{opacity: 1, x:0}}
-        initial={{opacity: 0, x: -100}}
-        transition={{duration: 1.5}}
-        className="flex flex-wrap items-center justify-center gap-4">
-            <motion.div 
-                variants={iconVariants(2.5)}
-                initial='intial'
-                animate='animate'
-                className="rounded-2xl border-4 border-neutral-800 p-4">
-                <FaPython className="text-7xl text-yellow-300"/>
-            </motion.div>
-            <motion.div 
-                variants={iconVariants(5)}
-                initial='intial'
-                animate='animate'
-                className="rounded-2xl border-4 border-neutral-800 p-4">
-                <RiNextjsFill className="text-7xl text-yellow-400"/>
-            </motion.div>
-            <motion.div 
-                variants={iconVariants(2.5)}
-                initial='intial'
-                animate='animate'
-                className="rounded-2xl border-4 border-neutral-800 p-4">
-                <BiLogoPostgresql className="text-7xl text-orange-400"/>
-            </motion.div>
-            <motion.div 
-                variants={iconVariants(5)}
-                initial='intial'
-                animate='animate'
-                className="rounded-2xl border-4 border-neutral-800 p-4">
-                <SiMongodb className="text-7xl text-blue-400"/>
-            </motion.div>
-            <motion.div 
-                variants={iconVariants(2.5)}
-                initial='intial'
-                animate='animate'
-                className="rounded-2xl border-4 border-neutral-800 p-4">
-                <FaBootstrap className="text-7xl text-purple-400"/>
-            </motion.div>
-            <motion.div 
-                variants={iconVariants(5)}
-                initial='intial'
-                animate='animate'
-                className="rounded-2xl border-4 border-neutral-800 p-4">
-                <RiTailwindCssFill className="text-7xl text-cyan-400"/>
-            </motion.div>
-                <motion.div variants={iconVariants(2.5)}
-                initial='intial'
-                animate='animate'
-                className="rounded-2xl border-4 border-neutral-800 p-4">
-                <FaReact className="text-7xl text-cyan-400"/>
-            </motion.div>
-            <motion.div 
-                variants={iconVariants(5)}
-                initial='intial'
-                animate='animate'
-                className="rounded-2xl border-4 border-neutral-800 p-4">
-                <FaNode className="text-7xl text-green-500"/>
-            </motion.div>
-        </motion.div>
-    </div>
-  )
-}
+      <motion.h2
+        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: -50 }}
+        transition={{ duration: 1 }}
+        className="my-20 text-center text-4xl text-[#2D4473]">
+        Technologies
+      </motion.h2>
 
-export default Technologies
+      <div className="flex flex-col gap-8">
+        {GROUPS.map((group) => (
+          <div key={group.title}>
+            <h3 className="mb-3 text-center text-xs font-semibold uppercase tracking-widest text-[#7A98BF]/70">
+              {group.title}
+            </h3>
+            <div className="flex flex-wrap justify-center gap-3">
+              {group.items.map(({ name, Icon, color }, index) => (
+                <motion.div
+                  key={name}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  className="group flex items-center gap-2 rounded-xl border border-[#7A98BF]/25 bg-white/40 px-3 py-2 transition-all duration-200 hover:-translate-y-1 hover:border-[#7A98BF] hover:shadow-md">
+                  <Icon className={`text-xl ${color}`} />
+                  <span className="text-sm font-medium text-[#2D4473]">{name}</span>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Technologies;

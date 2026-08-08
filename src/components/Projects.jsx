@@ -15,20 +15,18 @@ const Projects = () => {
                 whileInView={{opacity: 1, x:0}}
                 initial={{opacity: 0, x: -100}}
                 transition={{duration: 0.5}}
-                className="w-full lg:w-1/4">
-                    <img 
-                    src={project.image} 
-                    width={150}
-                    height={150}
-                    alt={project.title} 
-                    className="mb-6 rounded"
+                className="w-full lg:w-1/3">
+                    <img
+                    src={project.image}
+                    alt={project.title}
+                    className="mb-6 w-full rounded-lg"
                     />
                 </motion.div>
                 <motion.div 
                 whileInView={{opacity: 1, x:0}}
                 initial={{opacity: 0, x: 100}}
                 transition={{duration: 0.5}}
-                className="w-full max-x-xl lg:w-3/4">
+                className="w-full lg:w-2/3 lg:pl-8">
                     <a href={`https://phlucode.github.io/${project.linktag}`} target="_blank" rel="noopener noreferrer">
                         <h6 className="mb-2 font-semibold text-[#7A98BF] underline">{project.title}</h6>
                     </a>

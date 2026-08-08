@@ -1,18 +1,19 @@
 import EngPic from "../assets/projects/EngPic.png";
 import friendlyWeb from "../assets/projects/friendlyWeb.png";
 import StudentManageImg from "../assets/projects/StudentManageImg.png";
+import nanCCTVPic from "../assets/projects/NanCCTVPic.png";
 
 export const HERO_CONTENT = `"I created this portfolio website using JavaScript, React, Tailwind CSS framework and the Framer Motion library. It’s designed to introduce myself, showcase my skills, and highlight the projects I’ve worked on."`;
 
-export const ABOUT_TEXT = `My name is Suwanchai Chaisuwansri, but you can call me Phlu. I'm 20 years old, born on April 20, 2006, and I'm Thai. I currently live in Chiang Mai and study at Chiang Mai University in the College of Arts, Media and Technology, majoring in Digital Industry Integration. I have a deep interest in programming because of its complexity and the rewarding sense of accomplishment it brings when solving challenges. My main passion is web development, and I aspire to become a web developer in the future.`;
+export const ABOUT_TEXT = `A web developer with a strong interest in Backend and Full-Stack development, experienced in building web applications using JavaScript, Node.js, Express, and React. Familiar with server-side architecture, database management, and API integration, with a strong willingness to learn new technologies and continuously improve skills.`;
 
 export const PROJECTS = [
   {
-    title: "Booking Web App",
-    image: friendlyWeb,
+    title: "CCTV Accident Detection System",
+    image: nanCCTVPic,
     description:
-      "This project is my first full-stack website, inspired by my family's resort on Koh Phangan. It manages room bookings, prices, and availability, with users booking through the frontend and data sent to the backend.",
-    technologies: ["MongoDB", "React.js", "Express.js", "Node.js"],
+      "CCTV Accident Detection System detects road accidents in real time from live CCTV feeds and alerts responders automatically. As the backend developer, I built the APIs, the video-processing pipeline that serves the detection model, the incident database, and the real-time alerting system.",
+    technologies: ["Python", "FastAPI", "OpenCV", "PostgreSQL"],
     linktag: ''
   },
   {
