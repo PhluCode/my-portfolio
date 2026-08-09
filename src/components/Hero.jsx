@@ -44,7 +44,7 @@ const Hero = () => {
                         initial='hidden'
                         animate='visible'
                         className="w-full max-w-xl">
-                        <div className="mb-4 inline-flex items-center gap-2  border-b border-[#7A98BF]/30 bg-white py-2 text-[#2D4473]">
+                        <div className="mb-4 inline-flex items-center gap-2 border-b border-[#7A98BF]/30 py-2 text-[#2D4473]">
                             <FaGraduationCap className="text-2xl" />
                             <span className="text-lg font-bold uppercase tracking-wide">Education</span>
                         </div>
